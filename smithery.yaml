@@ -1,0 +1,19 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - imageRoot
+    properties:
+      imageRoot:
+        type: string
+        description: Root directory containing images
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['dist/image-resolver.js'], env: { IMAGE_ROOT: config.imageRoot } })
+  exampleConfig:
+    imageRoot: /usr/src/app/images
