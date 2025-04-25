@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ES2020", // 어떤 버전의 JavaScript로 컴파일할지 (Node.js 환경 고려)
+      "module": "CommonJS", // 👈 Change to CommonJS
+      "moduleResolution": "Node", // 👈 Change to Node
+      "outDir": "./dist", // 컴파일된 JavaScript 파일이 저장될 디렉토리 (선택사항)
+      "rootDir": "./src", // TypeScript 소스 파일이 있는 루트 디렉토리 (만약 src 폴더를 쓴다면)
+      "strict": true, // 모든 엄격한 타입 검사 옵션 활성화 (권장)
+      "esModuleInterop": true, // CommonJS 모듈을 ES 모듈처럼 import 가능하게 함
+      "skipLibCheck": true, // 모든 라이브러리(.d.ts) 파일의 타입 검사 건너뛰기 (컴파일 속도 향상)
+      "forceConsistentCasingInFileNames": true, // 파일 이름의 대소문자 구분 강제
+      "resolveJsonModule": true // JSON 파일을 모듈처럼 import 가능하게 함
+    },
+    "include": ["src/**/*"], // 컴파일할 파일 패턴 (만약 src 폴더를 쓴다면)
+    "exclude": ["node_modules", "**/*.spec.ts"] // 컴파일에서 제외할 파일/폴더
+  }
